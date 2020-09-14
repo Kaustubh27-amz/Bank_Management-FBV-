@@ -1,0 +1,7 @@
+{% extends 'bank/base.html' %}
+{% block body_block %}
+   <h1>Accounts:</h1>
+   {% for obj in object_list %}
+   <h3><a href="{% url 'account_detail' pk=obj.pk %}">{{obj.pk}}. {{obj.first_name}} {{obj.last_name}}</a></h3>
+   {% endfor %}
+{% endblock %}

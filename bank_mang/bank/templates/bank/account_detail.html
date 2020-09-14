@@ -1,0 +1,20 @@
+{% extends 'bank/base.html' %}
+{% block body_block %}
+   <h1>Account info</h1>
+
+   <h2>Name     : {{object.first_name}} {{object.last_name}}</h2>
+   <h2>Age      : {{object.age}}</h2>
+   <h2>Adhaar_no: {{object.adhaar_no}}</h2>
+   <h2>Mobile_No: {{object.mobile_no}}</h2>
+   <br>
+   <h2>Balance  :{{object.balance}}</h2>
+
+   <br>
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary"><a class="btn btn-danger" href="{% url 'account_update' pk=object.pk %}">Update</a></button>
+  <button type="button" class="btn btn-secondary"><a class="btn btn-danger" href="{% url 'account_delete' pk=object.pk %}">Delete</a></button>
+  <button type="button" class="btn btn-secondary"><a class="btn btn-danger" href="{% url 'deposit' pk=object.pk %}">Deposit</a></button>
+  <button type="button" class="btn btn-secondary"><a class="btn btn-danger" href="{% url 'withdraw' pk=object.pk %}">Withdraw</a></button>
+
+  </div>
+{% endblock %}
